@@ -15,8 +15,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-//        echo "dddddd";
-        return response()->view('home/index');
+        $figcaption = ['Earbuds','Headphones','Speakers','Keyboards','Mouses','Airpods'];
+        $imgs = ['image1.png','image2.png','image3.png','image4.png','image5.png','image6.png'];
+        return response()->view('home/index',['imgs'=>$imgs, 'figcaption'=>$figcaption]);
     }
 
     /**

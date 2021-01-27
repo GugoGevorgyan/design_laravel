@@ -16,7 +16,9 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,500,800" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+          crossorigin="anonymous"/>
     <!-- Styles -->
     @include('support.style')
     @stack('style')
@@ -26,60 +28,58 @@
 <div id="app">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
-            {{--            <a class="navbar-brand" href="{{ url('/') }}">--}}
-            {{--                {{ config('app.name', 'Laravel') }}--}}
-            {{--            </a>--}}
-                        <img src="{{asset('storage/MGlogo.png')}}" class="img-fluid" alt="logo">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <img src="{{asset('storage/MGlogo.png')}}" class="img-fluid" alt="logo">
+
+
+            <div class="menu" >
                 <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav container_select">
+                    {{--                    <a class="nav-link" href="#">Computers</a>--}}
+                    {{--                    <i class="far fa-angle-right"></i>--}}
+                    <li>
+                        <select class="select">
+                            <option value="Computers">Computers</option>
+                            <option value="Computers">Computers</option>
+                            <option value="Computers" selected>Computers</option>
+                            <option value="Computers">Computers</option>
+                        </select>
+                    </li>
+                    <li><select class="select">
+                            <option value="Printers">Printers</option>
+                            <option value="Printers">Printers</option>
+                            <option value="Printers" selected>Printers</option>
+                            <option value="Printers">Printers</option>
+                        </select>
+                    </li>
+
+                    <li><select class="select">
+                            <option value="Accesories">Accesories</option>
+                            <option value="Accesories">Accesories</option>
+                            <option value="Accesories" selected>Accesories</option>
+                            <option value="Accesories">Accesories</option>
+                        </select>
+                    </li>
 
                 </ul>
 
                 <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav ml-auto">
-                    <!-- Authentication Links -->
-                    @guest
-                        @if (Route::has('login'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                        @endif
-
-                        @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                        @endif
-                    @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                    @endguest
+                <ul class="navbar-nav ">
+                    <li class="search">
+                        <div class="input-group rounded">
+                            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                                   aria-describedby="search-addon"/>
+                            <span class="input-group-text border-0" id="search-addon">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <main >
+    <main>
         @yield('content')
     </main>
 </div>
