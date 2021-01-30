@@ -15,9 +15,64 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $figcaption = ['Earbuds','Headphones','Speakers','Keyboards','Mouses','Airpods'];
-        $imgs = ['image1.png','image2.png','image3.png','image4.png','image5.png','image6.png'];
-        return response()->view('home/index',['imgs'=>$imgs, 'figcaption'=>$figcaption]);
+        $hot_sales = [
+            (object)['name' => 'Samsung Earbuds',
+                'img' => 'computer.png',
+                'price' => 1500,
+                'old_price' => 2500],
+            (object)['name' => 'Samsung Earbuds',
+                'img' => 'computer.png',
+                'price' => 1500,
+                'old_price' => ''],
+            (object) ['name' => 'Samsung Earbuds',
+                'img' => 'computer.png',
+                'price' => 1500,
+                'old_price' => 2500],
+            (object)['name' => 'Samsung Earbuds',
+                'img' => 'computer.png',
+                'price' => 1500,
+                    'old_price' => 2500],
+        ];
+        $computers = [
+            (object)['name' => 'Samsung Earbuds',
+                'img' => 'computer.png',
+                'price' => 1500,
+                'old_price' => 2500],
+            (object)['name' => 'Samsung Earbuds',
+                'img' => 'computer.png',
+                'price' => 1500,
+                'old_price' => ''],
+            (object) ['name' => 'Samsung Earbuds',
+                'img' => 'computer.png',
+                'price' => 1500,
+                'old_price' => 2500],
+            (object)['name' => 'Samsung Earbuds',
+                'img' => 'computer.png',
+                'price' => 1500,
+                    'old_price' => 2500],
+            (object)['name' => 'Samsung Earbuds',
+                'img' => 'computer.png',
+                'price' => 1500,
+                'old_price' => 2500],
+            (object)['name' => 'Samsung Earbuds',
+                'img' => 'computer.png',
+                'price' => 1500,
+                'old_price' => ''],
+            (object) ['name' => 'Samsung Earbuds',
+                'img' => 'computer.png',
+                'price' => 1500,
+                'old_price' => 2500],
+            (object)['name' => 'Samsung Earbuds',
+                'img' => 'computer.png',
+                'price' => 1500,
+                    'old_price' => 2500],
+        ];
+
+        $brands = ['image10.png','image15.png','image16.png','image17.png','image18.png','image19.png'];
+        $figcaption = ['Earbuds', 'Headphones', 'Speakers', 'Keyboards', 'Mouses', 'Airpods'];
+        $imgs = ['image1.png', 'image2.png', 'image3.png', 'image4.png', 'image5.png', 'image6.png'];
+        return response()->view('home/index', ['imgs' => $imgs, 'figcaption' => $figcaption ,
+            'hot_sales'=>$hot_sales, 'computers'=>$computers, 'brands'=>$brands]);
     }
 
     /**
@@ -33,7 +88,7 @@ class HomeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -44,7 +99,7 @@ class HomeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -55,7 +110,7 @@ class HomeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -66,8 +121,8 @@ class HomeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -78,7 +133,7 @@ class HomeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
