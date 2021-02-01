@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 //use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\Product;
 
 class HomeController extends Controller
 {
@@ -67,6 +67,7 @@ class HomeController extends Controller
                 'price' => 1500,
                     'old_price' => 2500],
         ];
+//        $computers = Product::paginate(5);
 
         $brands = ['image10.png','image15.png','image16.png','image17.png','image18.png','image19.png'];
         $figcaption = ['Earbuds', 'Headphones', 'Speakers', 'Keyboards', 'Mouses', 'Airpods'];
@@ -82,7 +83,8 @@ class HomeController extends Controller
      */
     public function create()
     {
-        //
+        $computers = Product::paginate(20);
+        return response()->view('home/product', ['computers'=>$computers]);
     }
 
     /**
@@ -93,7 +95,7 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**

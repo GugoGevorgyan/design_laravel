@@ -15,7 +15,6 @@
                 <button type="button" class="bg-white  explore">
                     EXPLORE
                 </button>
-                {{--            <div class="btn bg-white  explore"> EXPLORE</div>--}}
             </div>
         </div>
         <div class="popular_categories_container center">
@@ -70,10 +69,10 @@
                         </a></div>
                 </div>
 
-                <div class="justify-content-between flex_row">
+                <div class="evenly flex_row ">
                     @foreach($hot_sales as $sales)
-                        <div class="hot_sales_imgs_container just_around">
-                            <div class="d-flex flex-row position-relative">
+                        <div class="hot_sales_imgs_container just_around ">
+                            <div class="d-flex flex-row position-relative h-15">
                                 @if($sales -> old_price)
                                     <div class="yes_sale center"> Sale</div>
                                 @endif
@@ -106,14 +105,14 @@
                 </div>
                 <div class="all_computers">
                     <div><p class="popular_text  pt-4">Computers</p></div>
-                    <div class="d-flex justify-content-between pb-4">
+                    <div class="just_between flex-row pb-4 pt-2">
                         <div class="all_computers__sort flex_row justify-content-between">
                             <a href="#">Notebook</a>
                             <a href="#">Netbook</a>
                             <a href="#">All in one</a>
                             <a href="#">Stacionary</a>
                         </div>
-                        <div>
+                        <div class="see_more">
                             <a href="#">see more</a>
                         </div>
                     </div>
@@ -128,11 +127,11 @@
                         </a></div>
                 </div>
 
-                <div class="justify-content-between flex_row">
+                <div class="evenly1 flex_row">
 
                     @foreach($computers as $computer)
                         <div class="hot_sales_imgs_container just_around">
-                            <div class="d-flex flex-row position-relative">
+                            <div class="d-flex flex-row position-relative h-15">
                                 @if($computer -> old_price)
                                     <div class="yes_sale center"> Sale</div>
                                 @endif
@@ -163,10 +162,11 @@
                         </div>
                     @endforeach
                 </div>
+
                 <P class="popular_text  pt-5 pb-4">Brands we deliver</P>
                 <div class="flex_row align-items-baseline justify-content-sm-between pb-sm-5">
                     @foreach($brands as $brand)
-                    <div><img src="{{asset('storage/'.$brand)}}" alt="{{$brand}}"></div>
+                    <div class="brand"><img src="{{asset('storage/'.$brand)}}" alt="{{$brand}}"></div>
                     @endforeach
                 </div>
             </div>

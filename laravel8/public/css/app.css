@@ -13037,3 +13037,6 @@ h3 {
     border-color: #dee2e6;
   }
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

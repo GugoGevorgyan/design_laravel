@@ -1,7 +1,7 @@
 @push('style')
     <style>
         * {
-            outline: 0.1px solid red;
+            /*outline: 0.1px solid red;*/
         }
 
         body {
@@ -105,10 +105,13 @@
         .description_param, .description_name {
             font-size: 30px;
         }
-
-        .font_size {
+        .description_name {
             font-size: 45px;
         }
+
+         .font_size {
+             font-size: 45px;
+         }
 
         p {
             margin-bottom: 0 !important;
@@ -124,17 +127,22 @@
             font-weight: 300;
             font-size: 24px;
             line-height: 50px;
+            margin-top: 30px;
         }
 
         .popular_categories_container {
             justify-content: space-evenly;
-            padding: 46px;
+            padding: 46px 0;
+            width: 70%;
+        }
+        .evenly1,.evenly{
+            justify-content: space-evenly;
         }
 
         .popular_categories_img {
             display: flex;
-            width: 140px;
-            height: 140px;
+            width: 160px;
+            height: 160px;
             overflow: hidden;
             border-radius: 50%;
             border: 1px solid #DEDEDE;
@@ -154,9 +162,15 @@
         }
 
         .select {
-            width: 122px;
+            width: 130px;
             height: 22px;
             border: none;
+        }
+        .select > option{
+            border: none;
+            width: 180px;
+            height: 52px;
+            background: #FFFFFF;
         }
 
         .container_select {
@@ -182,27 +196,30 @@
         }
 
         .hot_sales_container {
-            width: 73%;
+            width: 61%;
             position: relative;
+        }
+
+        .sales_name,.yes_sale ,.font_16_20{
+            font-family: Montserrat;
+            font-size: 16px;
+            line-height: 20px;
         }
 
         .yes_sale {
             Width: 70px;
             Height: 30px;
             background: #E11D1D;
-            font-family: Montserrat;
             font-style: normal;
             font-weight: 600;
-            font-size: 16px;
-            line-height: 20px;
             left: 20px;
             position: absolute;
             color: #FFFFFF;
         }
 
         .hot_sales_imgs_container {
-            width: 230px;
-            height: 370px;
+            width: 270px;
+            height: 380px;
             margin: 30px 0;
             background: #FFFFFF;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -232,17 +249,13 @@
         }
 
         .sales_name {
-            font-family: Montserrat;
             font-style: normal;
             font-weight: normal;
-            font-size: 16px;
-            line-height: 20px;
             border: none;
             color: #747474;
         }
 
         .order_now {
-
             width: 160px;
             height: 50px;
             background: #333333;
@@ -362,7 +375,7 @@
             height: 50px;
             background: #DEDEDE;
             border-radius: 50%;
-            margin-right: 14px;
+            margin: 20px 14px 0 0;
         }
 
         .footer_contact {
@@ -374,5 +387,67 @@
         .d_none{
             display: none !important;
         }
-    </style>
+        .line {
+            border: 1px solid #DEDEDE;
+        }
+
+        .prod > li > a{
+            color: #DEDEDE;
+            font-size: 18px;
+            line-height: 30px;
+        }
+        .about_text{
+            font-family: Montserrat;
+            font-size: 14px;
+            line-height: 24px;
+            color: #DEDEDE;
+        }
+
+        .footer__list__container{
+            padding: 0 30px !important;
+        }
+        .follow_us,.about_us__container{
+            display: none;
+        }
+
+        p.text-sm.text-gray-700.leading-5{
+           display: none;
+       }
+        p.text-sm.text-gray-700.leading-5,
+        .rounded-md > a:nth-child(6n+3){
+            display: none;
+        }
+       span[aria-current="page"] > span, span[aria-disabled="true"] > span, .rounded-md > a{
+           border-radius: 50%;
+           width: 39px;
+           height: 39px;
+           padding: 0 !important;
+           justify-content: center;
+           margin: 4px;
+           font-family: Montserrat;
+           font-weight: 600;
+           font-size: 18px;
+       }
+        .shadow-sm{
+            box-shadow: 0 0 0 0 !important;
+
+        }
+        .row{
+            justify-content: flex-end;
+            margin: 0 0 60px;
+        }
+        .row > div:first-child{
+            padding: 0;
+        }
+        .row{
+            justify-content: flex-end;
+            margin: 0 0 60px;
+        }
+        span[aria-current="page"] > span{
+            background-color: #E11D1D !important;
+            color: #FFFFFF !important;
+        }
+</style>
+
+
 @endpush
